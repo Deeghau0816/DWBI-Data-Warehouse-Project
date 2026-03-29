@@ -1,0 +1,2794 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/22/2026 11:45:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-B7S37QF"
+  DTS:CreatorName="DESKTOP-B7S37QF\Acer"
+  DTS:DTSID="{F13DC4CC-930D-4D5A-A971-553C5D0C2417}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{195269FC-9823-43BF-8E84-5896CAE41B8E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-B7S37QF\DWBI.RetailOrders_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B7543D3D-343F-4511-A5FC-4F95D1E6805D}"
+      DTS:ObjectName="DESKTOP-B7S37QF\DWBI.RetailOrders_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-B7S37QF\DWBI;Initial Catalog=RetailOrders_DW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-ETL_Load_Dim_Date-{B7543D3D-343F-4511-A5FC-4F95D1E6805D}DESKTOP-B7S37QF\DWBI.RetailOrders_DW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{E2CB814A-8497-4A7D-B29A-2F541CEEEC79}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\SLIIT\Year 03 _ Data Science\Assignments\DWBI\Dataset\supplier_contracts.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8066AF44-FAD1-4963-84A1-1FF0E5AEB013}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\SLIIT\Year 03 _ Data Science\Assignments\DWBI\Dataset\product-supplier.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product ID"
+              DTS:DTSID="{2C67CC2B-76DD-4873-AF98-A5A791D0514A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product Line"
+              DTS:DTSID="{92B6ADE4-315F-4309-9386-41CB9BA31053}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product Category"
+              DTS:DTSID="{2A64B2B6-1211-4544-A78E-B46DF193ADDE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product Group"
+              DTS:DTSID="{81165444-E230-4718-B482-0F9EA54EBB93}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product Name"
+              DTS:DTSID="{7C44F7A1-CEFD-44E0-BF7E-816A7924D3AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supplier Country"
+              DTS:DTSID="{D1CCC912-09FE-4F3B-A7E7-6C41B8509FE6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supplier Name"
+              DTS:DTSID="{D925D295-D448-46CD-94FB-591F6FA7FB2E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Supplier ID"
+              DTS:DTSID="{D257414E-D75B-4101-AF46-1547DF142858}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Dim_Supplier"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{69af991e-a85b-4fbe-9d01-bd30dc1f0d95}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Dim_Supplier"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Dim_Supplier\Contacts SupID Convert"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Contacts SupID Convert"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Supplier\Contacts SupID Convert.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Contacts SupID Convert.Inputs[Data Conversion Input].Columns[Supplier_ID]"
+                      cachedDataType="r8"
+                      cachedName="Supplier_ID"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Supplier\Contacts SupID Convert.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Dim_Supplier\Contacts SupID Convert.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Contacts SupID Convert.Outputs[Data Conversion Output].Columns[Copy of Supplier_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Contacts SupID Convert.Outputs[Data Conversion Output].Columns[Copy of Supplier_ID]"
+                      name="Copy of Supplier_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Dim_Supplier\Contacts SupID Convert.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Dim_Supplier\Contacts SupID Convert.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Contacts SupID Convert.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\Contacts SupID Convert.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Contacts SupID Convert.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\Contacts SupID Convert.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Supplier\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Supplier\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Inputs[Data Conversion Input].Columns[Supplier_Country_Full]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Supplier_Country_Full"
+                      lineageId="Package\Load Dim_Supplier\Derived Column.Outputs[Derived Column Output].Columns[Supplier_Country_Full]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Inputs[Data Conversion Input].Columns[Copy of Supplier_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Supplier_ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Copy of Supplier_ID]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Inputs[Data Conversion Input].Columns[Rating]"
+                      cachedDataType="r8"
+                      cachedName="Rating"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Rating]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Inputs[Data Conversion Input].Columns[Payment_Terms]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Payment_Terms"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Payment_Terms]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Inputs[Data Conversion Input].Columns[Account_Manager]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Account_Manager"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Account_Manager]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Inputs[Data Conversion Input].Columns[Supplier_Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Supplier_Country"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier_Country]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Inputs[Data Conversion Input].Columns[Supplier_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Supplier_Name"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier_Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Dim_Supplier\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Supplier_Country_Full_str]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Supplier_Country_Full_str]"
+                      name="Supplier_Country_Full_str"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Dim_Supplier\Derived Column.Outputs[Derived Column Output].Columns[Supplier_Country_Full]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Copy of Supplier_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Copy of Supplier_ID]"
+                      name="Copy of Copy of Supplier_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Copy of Supplier_ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Rating_Conv]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Rating_Conv]"
+                      name="Rating_Conv"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Rating]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Payment_Terms_str]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Payment_Terms_str]"
+                      name="Payment_Terms_str"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Payment_Terms]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Account_Manager_str]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Account_Manager_str]"
+                      name="Account_Manager_str"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Account_Manager]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Supplier_Country_str]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Supplier_Country_str]"
+                      name="Supplier_Country_str"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier_Country]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Supplier_Name_str]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Supplier_Name_str]"
+                      name="Supplier_Name_str"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier_Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Dim_Supplier\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Supplier\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Supplier\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Derived Column.Inputs[Derived Column Input].Columns[Supplier Country]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Supplier Country"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Country]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Supplier\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Dim_Supplier\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Derived Column.Outputs[Derived Column Output].Columns[Supplier_Country_Full]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Derived Column.Outputs[Derived Column Output].Columns[Supplier_Country_Full]"
+                      name="Supplier_Country_Full"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Country]} == "NO" ? "Norway" : #{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Country]} == "US" ? "United States" : #{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Country]} == "GB" ? "United Kingdom" : #{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Country]} == "DE" ? "Germany" : #{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Country]} == "FR" ? "France" : #{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Country]} == "ES" ? "Spain" : #{Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Country]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[Supplier Country] == "NO" ? "Norway" : [Supplier Country] == "US" ? "United States" : [Supplier Country] == "GB" ? "United Kingdom" : [Supplier Country] == "DE" ? "Germany" : [Supplier Country] == "FR" ? "France" : [Supplier Country] == "ES" ? "Spain" : [Supplier Country]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Dim_Supplier\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Dim_Supplier\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Supplier\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Left Input].Columns[Copy of Supplier ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Supplier ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Copy of Supplier ID]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Left Input].Columns[Supplier Country]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Supplier Country"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Supplier Country]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Left Input].Columns[Supplier Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Supplier Name"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Supplier Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Copy of Supplier_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Supplier_ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Copy of Supplier_ID]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Supplier_Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Supplier_Country"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Supplier_Country]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Supplier_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Supplier_Name"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Supplier_Name]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Rating]"
+                      cachedDataType="r8"
+                      cachedName="Rating"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Rating]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Payment_Terms]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Payment_Terms"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Payment_Terms]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Lead_Time_Days]"
+                      cachedDataType="r8"
+                      cachedName="Lead_Time_Days"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Lead_Time_Days]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Contract_Value_USD]"
+                      cachedDataType="r8"
+                      cachedName="Contract_Value_USD"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Contract_Value_USD]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Account_Manager]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Account_Manager"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Account_Manager]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Country]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Country]"
+                      name="Supplier Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Left Input].Columns[Supplier Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier Name]"
+                      name="Supplier Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Left Input].Columns[Supplier Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier_Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier_Country]"
+                      name="Supplier_Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Supplier_Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Supplier_Name]"
+                      name="Supplier_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Supplier_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Rating]"
+                      dataType="r8"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Rating]"
+                      name="Rating">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Rating]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Payment_Terms]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Payment_Terms]"
+                      name="Payment_Terms">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Payment_Terms]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Lead_Time_Days]"
+                      dataType="r8"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Lead_Time_Days]"
+                      name="Lead_Time_Days">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Lead_Time_Days]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Contract_Value_USD]"
+                      dataType="r8"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Contract_Value_USD]"
+                      name="Contract_Value_USD">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Contract_Value_USD]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Account_Manager]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Account_Manager]"
+                      name="Account_Manager">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Account_Manager]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Copy of Supplier_ID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Copy of Supplier_ID]"
+                      name="Copy of Supplier_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input].Columns[Copy of Supplier_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Supplier\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Supplier]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Dim_Supplier\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-B7S37QF\DWBI.RetailOrders_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-B7S37QF\DWBI.RetailOrders_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Lead_Time_Days]"
+                      cachedDataType="r8"
+                      cachedName="Lead_Time_Days"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lead_Time_Days]"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Lead_Time_Days]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Contract_Value_USD]"
+                      cachedDataType="r8"
+                      cachedName="Contract_Value_USD"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract_Value_USD]"
+                      lineageId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output].Columns[Contract_Value_USD]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Copy of Supplier_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Copy of Supplier_ID"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_ID]"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Copy of Supplier_ID]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Supplier_Name_str]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Supplier_Name_str"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_Name]"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Supplier_Name_str]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Supplier_Country_str]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Supplier_Country_str"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_Country]"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Supplier_Country_str]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Supplier_Country_Full_str]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Supplier_Country_Full_str"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_Country_Full]"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Supplier_Country_Full_str]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Payment_Terms_str]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Payment_Terms_str"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Payment_Terms]"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Payment_Terms_str]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Account_Manager_str]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Account_Manager_str"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Account_Manager]"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Account_Manager_str]" />
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rating_Conv]"
+                      cachedDataType="numeric"
+                      cachedName="Rating_Conv"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_Rating]"
+                      lineageId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output].Columns[Rating_Conv]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierKey]"
+                      dataType="i4"
+                      name="SupplierKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_ID]"
+                      dataType="wstr"
+                      length="50"
+                      name="Supplier_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_Name]"
+                      dataType="wstr"
+                      length="200"
+                      name="Supplier_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_Country]"
+                      dataType="wstr"
+                      length="100"
+                      name="Supplier_Country" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_Country_Full]"
+                      dataType="wstr"
+                      length="100"
+                      name="Supplier_Country_Full" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Payment_Terms]"
+                      dataType="wstr"
+                      length="100"
+                      name="Payment_Terms" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lead_Time_Days]"
+                      dataType="i4"
+                      name="Lead_Time_Days" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract_Value_USD]"
+                      dataType="i4"
+                      name="Contract_Value_USD" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Account_Manager]"
+                      dataType="wstr"
+                      length="100"
+                      name="Account_Manager" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Supplier_Rating]"
+                      dataType="numeric"
+                      name="Supplier_Rating"
+                      precision="3"
+                      scale="1" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Supplier\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Supplier\Product SupID Convert"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Product SupID Convert"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Supplier\Product SupID Convert.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Product SupID Convert.Inputs[Data Conversion Input].Columns[Supplier ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Supplier ID"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Supplier\Product SupID Convert.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Dim_Supplier\Product SupID Convert.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Product SupID Convert.Outputs[Data Conversion Output].Columns[Copy of Supplier ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Product SupID Convert.Outputs[Data Conversion Output].Columns[Copy of Supplier ID]"
+                      name="Copy of Supplier ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Dim_Supplier\Product SupID Convert.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Dim_Supplier\Product SupID Convert.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Product SupID Convert.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\Product SupID Convert.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Product SupID Convert.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\Product SupID Convert.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Supplier\ProductSupplier"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="ProductSupplier"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Dim_Supplier\ProductSupplier.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product ID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Product ID]"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product ID]"
+                      name="Product ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Line]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Product Line]"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Line]"
+                      name="Product Line"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Category]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Product Category]"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Category]"
+                      name="Product Category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Group]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Product Group]"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Group]"
+                      name="Product Group"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Product Name]"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Name]"
+                      name="Product Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier Country]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Supplier Country]"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier Country]"
+                      name="Supplier Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Supplier Name]"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier Name]"
+                      name="Supplier Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier ID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Supplier ID]"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier ID]"
+                      name="Supplier ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Product ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Product ID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Product Line]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Product Line" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Product Category]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Product Category" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Product Group]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Product Group" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Product Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Product Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Supplier Country]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Supplier Country" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Supplier Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Supplier Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].ExternalColumns[Supplier ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Supplier ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Supplier\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Supplier_ID]"
+                      cachedDataType="r8"
+                      cachedName="Supplier_ID"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Supplier_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Supplier_Name"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Supplier_Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Supplier_Country"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Supplier_Country_Full]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Supplier_Country_Full"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Country_Full]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Contract_Start]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Contract_Start"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_Start]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Contract_End]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Contract_End"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_End]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Payment_Terms]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Payment_Terms"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Payment_Terms]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Lead_Time_Days]"
+                      cachedDataType="r8"
+                      cachedName="Lead_Time_Days"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Lead_Time_Days]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Contract_Value_USD]"
+                      cachedDataType="r8"
+                      cachedName="Contract_Value_USD"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_Value_USD]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Account_Manager]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Account_Manager"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Account_Manager]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Rating]"
+                      cachedDataType="r8"
+                      cachedName="Rating"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Rating]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input].Columns[Copy of Supplier_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Supplier_ID"
+                      lineageId="Package\Load Dim_Supplier\Contacts SupID Convert.Outputs[Data Conversion Output].Columns[Copy of Supplier_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Supplier_ID]"
+                      dataType="r8"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Supplier_ID]"
+                      name="Supplier_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Supplier_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Supplier_Name]"
+                      name="Supplier_Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Supplier_Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Supplier_Country]"
+                      name="Supplier_Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Supplier_Country_Full]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Supplier_Country_Full]"
+                      name="Supplier_Country_Full">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Country_Full]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Contract_Start]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Contract_Start]"
+                      name="Contract_Start">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_Start]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Contract_End]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Contract_End]"
+                      name="Contract_End">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_End]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Payment_Terms]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Payment_Terms]"
+                      name="Payment_Terms">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Payment_Terms]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Lead_Time_Days]"
+                      dataType="r8"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Lead_Time_Days]"
+                      name="Lead_Time_Days">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Lead_Time_Days]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Contract_Value_USD]"
+                      dataType="r8"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Contract_Value_USD]"
+                      name="Contract_Value_USD">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_Value_USD]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Account_Manager]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Account_Manager]"
+                      name="Account_Manager">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Account_Manager]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Rating]"
+                      dataType="r8"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Rating]"
+                      name="Rating">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Rating]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Copy of Supplier_ID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output].Columns[Copy of Supplier_ID]"
+                      name="Copy of Supplier_ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Contacts SupID Convert.Outputs[Data Conversion Output].Columns[Copy of Supplier_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Supplier\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load Dim_Supplier\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Inputs[Sort Input].Columns[Product ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Product ID"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Inputs[Sort Input].Columns[Product Line]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Product Line"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Line]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Inputs[Sort Input].Columns[Product Category]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Product Category"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Category]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Inputs[Sort Input].Columns[Product Group]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Product Group"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Group]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Inputs[Sort Input].Columns[Product Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Product Name"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Inputs[Sort Input].Columns[Supplier Country]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Supplier Country"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier Country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Inputs[Sort Input].Columns[Supplier Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Supplier Name"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Inputs[Sort Input].Columns[Supplier ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Supplier ID"
+                      lineageId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Inputs[Sort Input].Columns[Copy of Supplier ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Supplier ID"
+                      lineageId="Package\Load Dim_Supplier\Product SupID Convert.Outputs[Data Conversion Output].Columns[Copy of Supplier ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Product ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Product ID]"
+                      name="Product ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Product Line]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Product Line]"
+                      name="Product Line">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Line]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Product Category]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Product Category]"
+                      name="Product Category">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Category]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Product Group]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Product Group]"
+                      name="Product Group">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Group]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Product Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Product Name]"
+                      name="Product Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Product Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Supplier Country]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Supplier Country]"
+                      name="Supplier Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Supplier Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Supplier Name]"
+                      name="Supplier Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Supplier ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Supplier ID]"
+                      name="Supplier ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output].Columns[Supplier ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Copy of Supplier ID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output].Columns[Copy of Supplier ID]"
+                      name="Copy of Supplier ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Load Dim_Supplier\Product SupID Convert.Outputs[Data Conversion Output].Columns[Copy of Supplier ID]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Dim_Supplier\Supplier Contacts"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Supplier Contacts"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'Supplier Contracts$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Dim_Supplier\Supplier Contacts.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_ID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Supplier_ID]"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_ID]"
+                      name="Supplier_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Supplier_Name]"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Name]"
+                      name="Supplier_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Supplier_Country]"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Country]"
+                      name="Supplier_Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Country_Full]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Supplier_Country_Full]"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Supplier_Country_Full]"
+                      name="Supplier_Country_Full"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_Start]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Contract_Start]"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_Start]"
+                      name="Contract_Start"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_End]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Contract_End]"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_End]"
+                      name="Contract_End"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Payment_Terms]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Payment_Terms]"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Payment_Terms]"
+                      name="Payment_Terms"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Lead_Time_Days]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Lead_Time_Days]"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Lead_Time_Days]"
+                      name="Lead_Time_Days"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_Value_USD]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Contract_Value_USD]"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Contract_Value_USD]"
+                      name="Contract_Value_USD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Account_Manager]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Account_Manager]"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Account_Manager]"
+                      name="Account_Manager"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Rating]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Rating]"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].Columns[Rating]"
+                      name="Rating"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Supplier_ID]"
+                      dataType="r8"
+                      name="Supplier_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Supplier_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Supplier_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Supplier_Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Supplier_Country" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Supplier_Country_Full]"
+                      dataType="wstr"
+                      length="255"
+                      name="Supplier_Country_Full" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Contract_Start]"
+                      dataType="wstr"
+                      length="255"
+                      name="Contract_Start" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Contract_End]"
+                      dataType="wstr"
+                      length="255"
+                      name="Contract_End" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Payment_Terms]"
+                      dataType="wstr"
+                      length="255"
+                      name="Payment_Terms" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Lead_Time_Days]"
+                      dataType="r8"
+                      name="Lead_Time_Days" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Contract_Value_USD]"
+                      dataType="r8"
+                      name="Contract_Value_USD" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Account_Manager]"
+                      dataType="wstr"
+                      length="255"
+                      name="Account_Manager" />
+                    <externalMetadataColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output].ExternalColumns[Rating]"
+                      dataType="r8"
+                      name="Rating" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Supplier_ID]"
+                      dataType="r8"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Supplier_ID]"
+                      name="Supplier_ID" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Supplier_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Supplier_Name]"
+                      name="Supplier_Name" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Supplier_Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Supplier_Country]"
+                      name="Supplier_Country" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Supplier_Country_Full]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Supplier_Country_Full]"
+                      name="Supplier_Country_Full" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Contract_Start]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Contract_Start]"
+                      name="Contract_Start" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Contract_End]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Contract_End]"
+                      name="Contract_End" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Payment_Terms]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Payment_Terms]"
+                      name="Payment_Terms" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Lead_Time_Days]"
+                      dataType="r8"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Lead_Time_Days]"
+                      name="Lead_Time_Days" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Contract_Value_USD]"
+                      dataType="r8"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Contract_Value_USD]"
+                      name="Contract_Value_USD" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Account_Manager]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Account_Manager]"
+                      name="Account_Manager" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Rating]"
+                      dataType="r8"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[Rating]"
+                      name="Rating" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Dim_Supplier.Paths[Data Conversion Output]"
+              endId="Package\Load Dim_Supplier\Sort 1.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Dim_Supplier\Product SupID Convert.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Dim_Supplier.Paths[Data Conversion Output1]"
+              endId="Package\Load Dim_Supplier\Sort.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Dim_Supplier\Contacts SupID Convert.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Dim_Supplier.Paths[Data Conversion Output2]"
+              endId="Package\Load Dim_Supplier\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Dim_Supplier\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Dim_Supplier.Paths[Derived Column Output]"
+              endId="Package\Load Dim_Supplier\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Load Dim_Supplier\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Dim_Supplier.Paths[Excel Source Output]"
+              endId="Package\Load Dim_Supplier\Contacts SupID Convert.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\Load Dim_Supplier\Supplier Contacts.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Load Dim_Supplier.Paths[Flat File Source Output]"
+              endId="Package\Load Dim_Supplier\Product SupID Convert.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Dim_Supplier\ProductSupplier.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load Dim_Supplier.Paths[Merge Join Output]"
+              endId="Package\Load Dim_Supplier\Derived Column.Inputs[Derived Column Input]"
+              name="Merge Join Output"
+              startId="Package\Load Dim_Supplier\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Load Dim_Supplier.Paths[Sort Output]"
+              endId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Load Dim_Supplier\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Load Dim_Supplier.Paths[Sort Output1]"
+              endId="Package\Load Dim_Supplier\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Load Dim_Supplier\Sort 1.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Load Dim_Supplier"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Dim_Supplier">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Load Dim_Supplier\Derived Column"
+          TopLeft="864.999987110496,152.499997727573" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Load Dim_Supplier\ProductSupplier"
+          TopLeft="48.499999773999,200.083330360469" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Load Dim_Supplier\Merge Join"
+          TopLeft="648.333323672414,152.166664399207" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Load Dim_Supplier\Supplier Contacts"
+          TopLeft="40.6666660606861,52.8333325460553" />
+        <NodeLayout
+          Size="106.4,41.6"
+          Id="Package\Load Dim_Supplier\Sort 1"
+          TopLeft="495.833325944841,197.833330385387" />
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Load Dim_Supplier\Contacts SupID Convert"
+          TopLeft="249.99999627471,53.3333325386048" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Load Dim_Supplier\Sort"
+          TopLeft="503.499992497265,55.4999991729856" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Load Dim_Supplier\Product SupID Convert"
+          TopLeft="250.833329595625,200.166663683951" />
+        <EdgeLayout
+          Id="Package\Load Dim_Supplier.Paths[Excel Source Output]"
+          TopLeft="201.466666060686,73.88333254233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.5333302140237,0"
+              Start="0,0"
+              End="41.0333302140237,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.0333302140237,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim_Supplier.Paths[Sort Output]"
+          TopLeft="552.299992497265,97.0999991729856">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="160.833331175149,55.0666652262214"
+              Start="0,0"
+              End="160.833331175149,47.5666652262214">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5333326131107" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5333326131107"
+                    Point2="0,27.5333326131107"
+                    Point3="4,27.5333326131107" />
+                  <mssgle:LineSegment
+                    End="156.833331175149,27.5333326131107" />
+                  <mssgle:CubicBezierSegment
+                    Point1="156.833331175149,27.5333326131107"
+                    Point2="160.833331175149,27.5333326131107"
+                    Point3="160.833331175149,31.5333326131107" />
+                  <mssgle:LineSegment
+                    End="160.833331175149,47.5666652262214" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim_Supplier.Paths[Sort Output1]"
+          TopLeft="602.233325944841,218.633330385387">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.0999977275729,-45.6666659861802"
+              Start="0,0"
+              End="38.5999977275729,-45.6666659861802">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="19.0499988637865,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.0499988637865,0"
+                    Point2="23.0499988637865,0"
+                    Point3="23.0499988637865,-4" />
+                  <mssgle:LineSegment
+                    End="23.0499988637865,-41.6666659861802" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.0499988637865,-41.6666659861802"
+                    Point2="23.0499988637865,-45.6666659861802"
+                    Point3="27.0499988637865,-45.6666659861802" />
+                  <mssgle:LineSegment
+                    End="38.5999977275729,-45.6666659861802" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim_Supplier.Paths[Data Conversion Output]"
+          TopLeft="435.633329595625,219.799997034669">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.1999963492154,0"
+              Start="0,0"
+              End="52.6999963492154,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="52.6999963492154,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim_Supplier.Paths[Merge Join Output]"
+          TopLeft="777.933323672414,173.13333106339">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.0666634380819,0"
+              Start="0,0"
+              End="79.5666634380819,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="79.5666634380819,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim_Supplier.Paths[Flat File Source Output]"
+          TopLeft="201.299999773999,220.92499702221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.533329821626,0"
+              Start="0,0"
+              End="42.033329821626,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="42.033329821626,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dim_Supplier.Paths[Data Conversion Output1]"
+          TopLeft="440.39999627471,75.2166658557952">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.0999962225549,0"
+              Start="0,0"
+              End="55.5999962225549,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.5999962225549,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Load Dim_Supplier\Data Conversion"
+          TopLeft="1084.16665051132,146.666664481163" />
+        <EdgeLayout
+          Id="Package\Load Dim_Supplier.Paths[Derived Column Output]"
+          TopLeft="1017.7999871105,170.383331104368">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66.3666634008289,0"
+              Start="0,0"
+              End="58.8666634008289,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.8666634008289,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load Dim_Supplier\OLE DB Destination"
+          TopLeft="1088.45828353345,225.333331766393" />
+        <EdgeLayout
+          Id="Package\Load Dim_Supplier.Paths[Data Conversion Output2]"
+          TopLeft="1162.16665051132,188.266664481163">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.8916330221277,37.0666672852305"
+              Start="0,0"
+              End="11.8916330221277,29.5666672852305">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5333336426152" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5333336426152"
+                    Point2="0,18.5333336426152"
+                    Point3="4,18.5333336426152" />
+                  <mssgle:LineSegment
+                    End="7.89163302212773,18.5333336426152" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.89163302212773,18.5333336426152"
+                    Point2="11.8916330221277,18.5333336426152"
+                    Point3="11.8916330221277,22.5333336426152" />
+                  <mssgle:LineSegment
+                    End="11.8916330221277,29.5666672852305" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dim_Supplier\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

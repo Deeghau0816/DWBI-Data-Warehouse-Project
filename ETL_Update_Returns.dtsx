@@ -1,0 +1,1033 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/22/2026 11:47:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-B7S37QF"
+  DTS:CreatorName="DESKTOP-B7S37QF\Acer"
+  DTS:DTSID="{CA26E3DD-FDAF-4235-B336-795249B99C99}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{8642C70A-D8C1-49FD-8B68-BC0398A8919B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-B7S37QF\DWBI.RetailOrders_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{02B0386A-3D05-4369-8F02-3A0EAF08350A}"
+      DTS:ObjectName="DESKTOP-B7S37QF\DWBI.RetailOrders_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-B7S37QF\DWBI;Initial Catalog=RetailOrders_DW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{02B0386A-3D05-4369-8F02-3A0EAF08350A}DESKTOP-B7S37QF\DWBI.RetailOrders_DW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{E2082FB8-1FB8-4F7B-94E1-C688858A1149}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\SLIIT\Year 03 _ Data Science\Assignments\DWBI\Dataset\order_returns.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A73D5F6F-EE45-4BC5-BBF2-60A6C85B5313}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\SLIIT\Year 03 _ Data Science\Assignments\DWBI\Dataset\Unmatched_Returns.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order_ID"
+              DTS:DTSID="{4BA59D1A-7FA4-486F-BC41-696F0115F23A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Original_Order_Date"
+              DTS:DTSID="{9A1809BD-17DE-432A-9752-C70E1256C2CF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Return_Date"
+              DTS:DTSID="{8B3B16ED-07BA-47E1-82F0-15E6B35C788A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Return_Reason"
+              DTS:DTSID="{0D782A21-902C-457C-87F7-8D0934BCE59D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Refund_Amount"
+              DTS:DTSID="{A880BC8C-7F09-484E-AD60-ECF26E31C594}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Return_Status"
+              DTS:DTSID="{0664A684-0A5E-4289-878C-0FAF10D53641}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="str_Order_ID"
+              DTS:DTSID="{16473EA2-3AFA-4800-AFBA-7F372C26235F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{9E0AC5F8-8B89-48FF-ADD0-8A787C1341F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{2D7C1576-7339-4A7C-9BBA-3C98B271C470}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Update Returns"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A1021E84-7717-4C41-A49A-5694B46F6056}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Returns"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Update Returns\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Update Returns\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Returns\Data Conversion.Inputs[Data Conversion Input].Columns[Order_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Order_ID"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Order_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Update Returns\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Output].Columns[str_Order_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Output].Columns[str_Order_ID]"
+                      name="str_Order_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Order_ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Update Returns\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Returns\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'Order Returns$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update Returns\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Order_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Order_ID]"
+                      length="255"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Order_ID]"
+                      name="Order_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Original_Order_Date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Original_Order_Date]"
+                      length="255"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Original_Order_Date]"
+                      name="Original_Order_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Return_Date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Return_Date]"
+                      length="255"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Return_Date]"
+                      name="Return_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Return_Reason]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Return_Reason]"
+                      length="255"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Return_Reason]"
+                      name="Return_Reason"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Refund_Amount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Refund_Amount]"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Refund_Amount]"
+                      name="Refund_Amount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Return_Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Return_Status]"
+                      length="255"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Return_Status]"
+                      name="Return_Status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Order_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="Order_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Original_Order_Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Original_Order_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Return_Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Return_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Return_Reason]"
+                      dataType="wstr"
+                      length="255"
+                      name="Return_Reason" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Refund_Amount]"
+                      dataType="r8"
+                      name="Refund_Amount" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].ExternalColumns[Return_Status]"
+                      dataType="wstr"
+                      length="255"
+                      name="Return_Status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Order_ID]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Order_ID]"
+                      name="Order_ID" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Original_Order_Date]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Original_Order_Date]"
+                      name="Original_Order_Date" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Return_Date]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Return_Date]"
+                      name="Return_Date" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Return_Reason]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Return_Reason]"
+                      name="Return_Reason" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Refund_Amount]"
+                      dataType="r8"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Refund_Amount]"
+                      name="Refund_Amount" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Return_Status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[Return_Status]"
+                      name="Return_Status" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Returns\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update Returns\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].Columns[Original_Order_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Original_Order_Date"
+                      externalMetadataColumnId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Original_Order_Date]"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Original_Order_Date]" />
+                    <inputColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].Columns[Return_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Return_Date"
+                      externalMetadataColumnId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Return_Date]"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Return_Date]" />
+                    <inputColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].Columns[Return_Reason]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Return_Reason"
+                      externalMetadataColumnId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Return_Reason]"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Return_Reason]" />
+                    <inputColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].Columns[Refund_Amount]"
+                      cachedDataType="r8"
+                      cachedName="Refund_Amount"
+                      externalMetadataColumnId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Refund_Amount]"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Refund_Amount]" />
+                    <inputColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].Columns[Return_Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Return_Status"
+                      externalMetadataColumnId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Return_Status]"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Return_Status]" />
+                    <inputColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].Columns[str_Order_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="str_Order_ID"
+                      externalMetadataColumnId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[str_Order_ID]"
+                      lineageId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Output].Columns[str_Order_ID]" />
+                    <inputColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Update Returns\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Update Returns\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].Columns[Order_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Order_ID"
+                      externalMetadataColumnId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order_ID]"
+                      lineageId="Package\Update Returns\Excel Source.Outputs[Excel Source Output].Columns[Order_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Order_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="Order_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Original_Order_Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Original_Order_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Return_Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Return_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Return_Reason]"
+                      dataType="wstr"
+                      length="255"
+                      name="Return_Reason" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Refund_Amount]"
+                      dataType="r8"
+                      name="Refund_Amount" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Return_Status]"
+                      dataType="wstr"
+                      length="255"
+                      name="Return_Status" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[str_Order_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="str_Order_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Update Returns\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Fact_Sales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Fact_Sales]) [refTable]
+where [refTable].[Order_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SalesKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DeliveryDateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CustomerKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SupplierKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Order_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Quantity_Ordered" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Total_Retail_Price" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Cost_Price_Per_Unit" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Profit" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;referenceColumn name="Delivery_Days" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Is_Returned" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="accm_txn_create_time" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="accm_txn_complete_time" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="txn_process_time_hours" dataType="DT_NUMERIC" length="0" precision="10" scale="2" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Update Returns\Data Conversion.Outputs[Data Conversion Output].Columns[str_Order_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update Returns\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-B7S37QF\DWBI.RetailOrders_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-B7S37QF\DWBI.RetailOrders_DW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Update Returns\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Returns\Lookup.Inputs[Lookup Input].Columns[str_Order_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="str_Order_ID"
+                      lineageId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Output].Columns[str_Order_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Order_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Returns\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Update Returns\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update Returns\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Update Returns\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update Returns\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Update Returns\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Returns\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Returns\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Returns\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Returns\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update Returns\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Fact_Sales
+SET Is_Returned = 1
+WHERE Order_ID = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update Returns\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-B7S37QF\DWBI.RetailOrders_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-B7S37QF\DWBI.RetailOrders_DW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Update Returns\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Update Returns\OLE DB Command.Inputs[OLE DB Command Input].Columns[str_Order_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="str_Order_ID"
+                      externalMetadataColumnId="Package\Update Returns\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Output].Columns[str_Order_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update Returns\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update Returns\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Update Returns\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update Returns\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Update Returns\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update Returns\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update Returns\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update Returns\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update Returns\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Update Returns.Paths[Data Conversion Output]"
+              endId="Package\Update Returns\Lookup.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\Update Returns\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Update Returns.Paths[Excel Source Output]"
+              endId="Package\Update Returns\Data Conversion.Inputs[Data Conversion Input]"
+              name="Excel Source Output"
+              startId="Package\Update Returns\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Update Returns.Paths[Lookup Error Output]"
+              endId="Package\Update Returns\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Lookup Error Output"
+              startId="Package\Update Returns\Lookup.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Update Returns.Paths[Lookup Match Output]"
+              endId="Package\Update Returns\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Update Returns\Lookup.Outputs[Lookup Match Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Update Returns"
+          TopLeft="134.166659336124,50.2666663171186" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Update Returns">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Update Returns\Excel Source"
+          TopLeft="44.1666642535065,22.5333331766393" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Update Returns\Data Conversion"
+          TopLeft="37.4999979510904,94.4666660097572" />
+        <EdgeLayout
+          Id="Package\Update Returns.Paths[Excel Source Output]"
+          TopLeft="114.833331102298,64.1333331766394">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.3333328331179"
+              Start="0,0"
+              End="0,22.8333328331179">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8333328331179" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Update Returns\Lookup"
+          TopLeft="59.1666634339427,182.866665395035" />
+        <EdgeLayout
+          Id="Package\Update Returns.Paths[Data Conversion Output]"
+          TopLeft="115.533330692517,136.066666009757">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.7999993852775"
+              Start="0,0"
+              End="0,39.2999993852775">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.2999993852775" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Update Returns\OLE DB Command"
+          TopLeft="37.4999979510904,266.933331477112" />
+        <EdgeLayout
+          Id="Package\Update Returns.Paths[Lookup Match Output]"
+          TopLeft="118.333330692517,224.466665395035">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.4666660820776"
+              Start="0,0"
+              End="0,34.9666660820776">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9666660820776" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,11.6786455410388,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Update Returns\Flat File Destination"
+          TopLeft="253.333319491811,184.866665503515" />
+        <EdgeLayout
+          Id="Package\Update Returns.Paths[Lookup Error Output]"
+          TopLeft="171.966663433943,204.666665449275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.3666560578682,0"
+              Start="0,0"
+              End="73.8666560578682,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="73.8666560578682,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8.93305868981591,5,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Update Returns\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Update Returns\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Fact_Sales]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
